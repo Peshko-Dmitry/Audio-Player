@@ -1,0 +1,402 @@
+// цвета
+$colorOne: #273f47;
+$colorTwo: #98acb3;
+$colorOrange: #ffaa11;
+$colorLight: #bdc6ca;
+$colorLightTwo: #8ca3ab;
+$colorWhite: #fafafa;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .player{
+        position: relative;
+        background: #273f47;
+        height: 400px;
+        width: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        .header{
+            height: 50px;
+            width: 100%;
+            color: $colorWhite;
+            
+            .song-name{
+                position: absolute;
+                top: 11px;
+                width: 190px;
+                height: 18px;
+                margin: 2px;
+                left: 15px;
+                font-size: 14px;
+                font-weight: 600;
+                overflow: hidden;
+            }
+            .artist-name{
+                color: $colorLightTwo;
+                position: absolute;
+                top: 30px;
+                width: 170px;
+                left: 15px;
+                
+            }
+            .fa-solid{
+                position: absolute;
+                text-align: center;
+                color: $colorLight;
+                font-size: 25px;
+                right: 10px;
+                top: 13px;
+                height: 30px;
+                width: 30px;
+                padding: 3px;
+                cursor: pointer;
+                transition: all .3s ease;
+            }
+            .fa-solid:hover{
+                color: $colorWhite;
+            }
+            .fa-solid:active{
+                color: $colorLightTwo
+            }
+
+        }
+        .animation{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 10px;
+            width: 80%;
+            height: 50%;
+            margin: 0px 10%;
+            i:nth-child(n){
+                position: absolute;
+                margin-left: auto;
+                margin-right: auto;
+                color: $colorOne;
+                border-radius: 50%;
+                background: none;
+                border: 1px solid $colorLightTwo;
+            }
+            i:nth-child(1){
+                font-size: 45px;
+                z-index: 2;
+                border: none;
+                
+            }
+            i:nth-child(2){
+                height: 75px;
+                width: 75px;
+                background: $colorLightTwo;
+            }
+            i:nth-child(3){
+                height: 90px;
+                width: 90px;
+            }
+            i:nth-child(4){
+                height: 100px;
+                width: 100px;
+                border: 1px solid #4a646d;
+
+            }
+            i:nth-child(5){
+                height: 110px;
+                width: 110px;
+                border: 1px solid #87989e;
+            }
+            i:nth-child(6){
+                height: 130px;
+                width: 130px;
+                border: 1px solid #4a646d;
+            }
+            i:nth-child(7){
+                height: 170px;
+                width: 170px;
+                border: 1px solid $colorOrange;
+            }
+            i:nth-child(8){
+                height: 190px;
+                width: 190px;
+                border: 1px solid #2e4d57;
+            }
+            //active animation
+            i.active:nth-child(2){
+                animation: .4s aniSongItem-1  linear infinite;
+            }
+            i.active:nth-child(3){
+                animation: .4s aniSongItem-2 linear infinite;
+            }
+            i.active:nth-child(4){
+                animation: .4s aniSongItem-3 linear infinite;
+
+            }
+            i.active:nth-child(5){
+                animation: .4s aniSongItem-4 linear infinite;
+            }
+            i.active:nth-child(6){
+                animation: .4s aniSongItem-5 linear infinite;
+
+            }
+            // animation
+            @keyframes aniSongItem-1 {
+                0%{
+                    height: 75px;
+                    width: 75px;
+                }
+                100%{
+                    height: 80px;
+                    width: 84px;
+                }
+            }
+            @keyframes aniSongItem-2 {
+                0%{
+                    height: 90px;
+                    width: 90px;
+                }
+                100%{
+                    height: 105px;
+                    width: 105px;
+                }
+            }
+            @keyframes aniSongItem-3 {
+                0%{
+                    height: 100px;
+                    width: 100px;
+                }
+                100%{
+                    height: 115px;
+                    width: 115px;
+                }
+            }
+            @keyframes aniSongItem-4 {
+                0%{
+                    height: 110px;
+                    width: 110px;
+                }
+                100%{
+                    height: 125px;
+                    width: 125px;
+                }
+            }
+            @keyframes aniSongItem-5 {
+                0%{
+                    height: 130px;
+                    width: 130px;
+                }
+                100%{
+                    height: 145px;
+                    width: 145px;
+                }
+            }
+            
+        }
+        .nav{
+            position: absolute;
+            top: 270px;
+            width: 100%;
+            height: 20px;
+            .seek_bar{
+                height: 20px;
+                .song_timer{
+                    position: absolute;
+                    left: 5px;
+                    font-size: 12px;
+                    margin: 2.5px;
+                    color: $colorWhite;
+                }
+                .song_time{
+                    position: absolute;
+                    right: 5px;
+                    font-size: 12px;
+                    margin: 2.5px;
+                    color: $colorWhite;
+                }
+                div{
+                    position: absolute;
+                    top: 7px;
+                    left: 45px;
+                    height: 6px;
+                    width: 160px;
+                    background: $colorWhite;
+                    border-radius: 3px;
+                    margin: 0;
+                    overflow: hidden;
+                    i{
+                        position: absolute;
+                        height: 6px;
+                        width: 0%;
+                        background: $colorOrange;
+                        border-radius: 3px;
+                    }
+                    
+                }
+
+            }
+            .panel{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 40px;
+                text-align: center;
+                height: 40px;
+                i:nth-child(n){
+                    color: $colorWhite;
+                    margin: 20px;
+                    font-size: 20px;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                }
+                i:nth-child(1):hover {
+                    color: $colorOrange;
+                }
+                i:nth-child(4):hover {
+                    color: $colorOrange;
+                }
+                i:nth-child(2){
+                    font-size: 30px;
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    background: #ffaa11;
+                    padding-left: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                i:nth-child(2):hover{
+                    opacity: .9;
+                }
+                i:nth-child(2):active{
+                    opacity: .5;
+                }
+                i:nth-child(3){
+                    font-size: 30px;
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    background: #ffaa11;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                i:nth-child(3):hover{
+                    opacity: .9;
+                }
+                i:nth-child(3):active{
+                    opacity: .5;
+                }
+                i.none{
+                    display: none;
+                }
+            }
+        }
+
+    }
+    .play-list{
+        position: absolute;
+        background: #273f47;
+        height: 400px;
+        width: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        display: none;
+        z-index: 3;
+        
+        .fa-solid{
+            position: absolute;
+            right: 5px;
+            color: $colorLight;
+            font-size: 24px;
+            margin: 10px 10px;
+            cursor: pointer;
+        }
+        .fa-solid:hover{
+            color: $colorTwo;
+        }
+        h2{
+            position: absolute;
+            display: flex;
+            left: 15px;
+            top: 10px;
+            color: $colorLight;
+            font-size: 20px;
+            border-bottom: 2px solid $colorOrange;
+            height: 30px;
+            width: 200px;
+            
+        }
+        .block{
+            position: relative;
+            top: 50px;
+            left: 15px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            width: 220px;
+            padding-bottom: 20px;
+            max-height: 341px;
+            &::-webkit-scrollbar{
+                width: 8px;
+                
+            }
+
+            &::-webkit-scrollbar-thumb{
+                border-radius: 10px;
+                background: $colorTwo;
+            }
+            &::-webkit-scrollbar-thumb:hover{
+                background: $colorOrange;
+            }
+            .track{
+                
+                height: 40px;
+                width: 200px;
+                margin-bottom: 3px;
+                cursor: pointer;
+                background: $colorOne;
+                border: 1px solid $colorTwo;
+                border-radius: 5px;
+                overflow: hidden;
+                
+                .number{
+                    position: absolute;
+                    padding-left: 5px;
+                    padding-right: 3px;
+                    padding-bottom: 10px;
+                    color: $colorTwo;
+                    padding-top: 3px;
+                    border-radius: 5px;
+                }
+                
+                .song{
+                padding-left: 3px;
+                white-space: nowrap;
+                margin-left: 20px;
+                font-size: 16px;
+                color: $colorWhite;
+                    
+                }
+                .artist{
+                padding-left: 3px;
+                margin-left: 20px;
+                color: $colorLightTwo;
+                white-space: nowrap
+                }
+            }
+            .track:hover{
+                background: $colorOrange;
+            }
+
+        }
+    }
+}
